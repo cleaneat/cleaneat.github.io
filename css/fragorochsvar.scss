@@ -1,0 +1,89 @@
+.question {
+
+    .question-header {
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        background: #fff;
+        background-size: cover;
+        background-position: center;
+
+        h1 {
+            font-size: 48pt;
+            font-weight: 700;
+            color:#333;
+        }
+
+    }
+
+    ul {
+        //counter-reset: item;
+        list-style-type: none;
+        padding-left: 0;
+        //margin-bottom: 50px;
+
+        li {
+            position: relative;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+
+        li:before {
+            position: absolute;
+            left:-36px;
+            top:14px;
+            display: block;
+            margin-bottom: 10px;
+            //content: counter(item) "  ";
+            content:"";
+            counter-increment: item;
+            width:8px;
+            height:8px;
+            border-radius: 50px;
+            text-align: center;
+            color: #fff;
+            background: #ccc;
+            font-weight: 400;
+            font-size: 16pt;
+
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    ol {
+        counter-reset: item;
+        list-style-type: none;
+        padding-left: 0;
+        //margin-bottom: 50px;
+
+        li {
+            position: relative;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+
+        li:before {
+            position: absolute;
+            left:-45px;
+            top:5px;
+            display: block;
+            margin-bottom: 10px;
+            content: counter(item) "  ";
+            counter-increment: item;
+            width:24px;
+            height:24px;
+            border-radius: 50px;
+            text-align: center;
+            color: #fff;
+            background: #ccc;
+            font-weight: 200;
+            font-size: 12pt;
+
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+}

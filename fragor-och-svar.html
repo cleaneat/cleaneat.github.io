@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+<!--            <div class="list-group">-->
+                {% for post in site.categories.fragorochsvar %}
+<!--                    <a class="list-group-item" href="{{ post.url | prepend: site.baseurl }}">-->
+                   <li>
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title | escape }}
+<!--                        <span class="glyphicon glyphicon-menu-right pull-right"></span>-->
+                    </a>
+                    </li>
+                {% endfor %}
+
+    <!--
+                <a class="showAll" href="/fragor-och-svar/">
+                    Visa alla Frågor och svar
+                    <span class="glyphicon glyphicon-menu-right pull-right"></span>
+                </a>
+    -->
+        </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

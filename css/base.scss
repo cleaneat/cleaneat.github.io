@@ -1,0 +1,372 @@
+@import 'definitions';
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Abril+Fatface');
+
+
+
+$button-width: 61px;                    // The width of the button area
+$button-height: 61px;                   // The height of the button area
+$bar-thickness: 2px;                    // The thickness of the button bars
+$button-pad: 14px;                      // The left/right padding between button area and bars.
+$button-bar-space: 9px;                // The spacing between button bars
+$button-transistion-duration: .15s;     // The transition duration
+//$main-color: rgb(255,50,100);
+$main-color: rgb(248, 115, 115);
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 18pt;
+}
+main {
+    min-height: 100vh;
+    padding-top: 140px;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 100;
+    margin:0;
+    padding:0;
+}
+a {
+    color:#333;
+    &:hover {
+        color:#000;
+        text-decoration: none;
+    }
+}
+
+.btn {
+    border-radius: 0;
+}
+
+#logo {
+    display: inline-block;
+    width: auto;
+    z-index: 2;
+
+    text-align: center;
+    font-size: 64pt;
+    line-height: 54pt;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:$main-color;
+    &:hover {
+        text-decoration: none;
+    }
+
+    @media(max-width: 992px) {
+        margin-top: 8px;
+        text-align: left;
+        font-size: 32pt;
+        line-height: 27pt;
+    }
+
+}
+#logo-sub {
+    display: block;
+    width: 100%;
+
+    text-align: center;
+    font-size: 21pt;
+    line-height: 21pt;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 0;
+
+    @media(max-width: 992px) {
+        text-align: left;
+        font-size: 10.5pt;
+        line-height: 10.5pt;
+    }
+}
+header {
+    position: fixed;
+    left:0;
+    right:0;
+    z-index: 3;
+    background: #fff;
+    text-align: center;
+    padding:20px;
+    @media(max-width: 992px) {
+        padding:10px;
+    }
+}
+footer {
+    margin-top: 50px;
+    padding:40px;
+    text-align: center;
+    background: #f8f8f8;
+    nav {
+        a {
+            margin:15px;
+            &:hover {
+                border-bottom: 1px solid #333;
+            }
+        }
+    }
+}
+article {
+    h2 {
+        margin-top:20px;
+        font-weight: 300;
+    }
+}
+
+.img-article {
+    display: block;
+    margin: 200px;
+}
+
+div[class^="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ad-slot {
+    @include centeredContent;
+    background: #ddd;
+    min-height: 300px;
+    text-align: center;
+    padding: 20px;
+    height:300px;
+    //margin: 0 20px;
+    &:before {
+        content: 'AD';
+    }
+}
+.block {
+    width:100%;
+    height:300px;
+    background: #fff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: background-color .3s;
+    margin-bottom: 10px;
+
+    @media(max-width: 1199px) {
+        height: 240px;
+    }
+    @media(max-width: 992px) {
+        height: 200px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color:rgba(255,255,255,.2);
+
+        transition: background-color .3s;
+    }
+    &:hover {
+        &:before {
+            background-color:rgba(255,255,255,0);
+        }
+        h3 {
+            color:#000;
+            transition: color .3s;
+        }
+    }
+
+    &.recepie-thumb {
+        h3 {
+            position: absolute;
+            bottom: 0px;
+            left:0;
+            right: 0;
+            display: block;
+            background: rgba(255,255,255, .8);
+            border-top: 1px solid #fff;
+            padding: 10px;
+            color:#666;
+            font-size: 18pt;
+            text-align: center;
+            font-weight: 200;
+            //transition: background 1s;
+        }
+        &:hover {
+            h3 {
+                color:#000;
+                background: rgba(255,255,255, .9);
+                //transition: background .3s;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+#menu {
+    display: none;
+    position: fixed;
+    z-index:1000;
+    height:100vh;
+    top:0;
+    left:0;
+    right:0;
+    background: rgba(255,255,255,.97);
+
+    &.open {
+        display: block;
+    }
+
+    nav {
+
+        text-align: center;
+        font-size:40pt;
+        padding:100px;
+
+        a {
+            color:#000;
+            display: block;
+            text-decoration: none;
+            line-height: 40pt;
+            margin-bottom: 30px;
+            &:hover {
+                color:#444;
+            }
+        }
+    }
+
+}
+
+#menu-btn {
+
+    position: fixed;
+    z-index: 1001;
+    top:25px;
+    right:25px;
+
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: $button-width;
+    height: $button-height;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    background-color: $main-color;
+
+    @media(max-width: 992px) {
+        top:10px;
+        right:10x;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: ($button-height / 2) - ($bar-thickness / 2);
+        left: $button-pad;
+        right: $button-pad;
+        height: $bar-thickness;
+        background: rgb(255,255,255);
+        transition: background 0s $button-transistion-duration;
+
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: $bar-thickness;
+            background-color: #fff;
+            content: "";
+            transition-duration: $button-transistion-duration, $button-transistion-duration;
+            transition-delay: $button-transistion-duration, 0s;
+        }
+
+        &::before {
+            top: -$bar-thickness - $button-bar-space;
+            transition-property: top, transform;
+        }
+
+        &::after {
+            bottom: -$bar-thickness - $button-bar-space;
+            transition-property: bottom, transform;
+        }
+    }
+
+    &.is-active {
+
+        span {
+            background: none;
+
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+
+            &::before,
+            &::after {
+                transition-delay: 0s, $button-transistion-duration;
+            }
+        }
+    }
+
+
+}
+
+#whatIsCleanEating {
+    @include centeredContent;
+    h3 {
+        font-family: 'Patua One', cursive;
+        font-size: 64pt;
+        text-align: center;
+        text-shadow: 0 0 1px #000;
+        color:#fff;
+        text-decoration: none;
+    }
+
+}
+#fragorOchSvar {
+    @include centeredContent;
+    h3 {
+        font-family: 'Patua One', cursive;
+        font-size: 48pt;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+#doktornSvarar {
+    position: relative;
+
+    h3 {
+        position: absolute;
+        bottom: 20px;
+        left:0;
+        right:0;
+
+        font-family: 'Patua One', cursive;
+        text-shadow: 0 0 2px #000;
+        color:#fff;
+        line-height: 36pt;
+        font-size: 44pt;
+        text-align: center;
+    }
+}

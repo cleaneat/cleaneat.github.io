@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    {% seo %}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="alternate" hreflang="sv-se" href="http://cleaneat.se/" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/recept.css" />
+    <link rel="stylesheet" href="/css/fragorochsvar.css" />
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2568813711883993",
+            enable_page_level_ads: true
+        });
+    </script>
+-->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/base.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+    <body>
+    <header>
+        <a id="logo" href="/">Cleaneat</a>
+        <span id="logo-sub">Ren, god och hälsosam mat</span>
+
+        <button id="menu-btn">
+            <span>toggle menu</span>
+        </button>
+        <div id="menu">
+            {% include menu.html %}
+        </div>
+    </header>
+        <main>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% include menu.html %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
