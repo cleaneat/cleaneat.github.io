@@ -1,0 +1,79 @@
+/* line 3, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+.recepie .recepie-header {
+  text-align: center;
+  padding: 20px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #fff;
+  background-size: cover;
+  background-position: center; }
+  /* line 15, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+  .recepie .recepie-header h1 {
+    font-size: 48pt;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 1px #666, 0 0 20px rgba(0, 0, 0, 0.5); }
+
+/* line 25, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+.recepie ul {
+  list-style-type: none;
+  padding-left: 0; }
+  /* line 31, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+  .recepie ul li {
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 10px; }
+  /* line 37, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+  .recepie ul li:before {
+    position: absolute;
+    left: -36px;
+    top: 14px;
+    display: block;
+    margin-bottom: 10px;
+    content: "";
+    counter-increment: item;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    text-align: center;
+    color: #fff;
+    background: #ccc;
+    font-weight: 400;
+    font-size: 16pt;
+    display: inline-block;
+    margin-right: 10px; }
+
+/* line 59, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+.recepie ol {
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 0; }
+  /* line 65, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+  .recepie ol li {
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 10px; }
+  /* line 71, /Users/kodninja/Dropbox/cleaneat.se/css/recept.scss */
+  .recepie ol li:before {
+    position: absolute;
+    left: -45px;
+    top: 5px;
+    display: block;
+    margin-bottom: 10px;
+    content: counter(item) "  ";
+    counter-increment: item;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    text-align: center;
+    color: #fff;
+    background: #ccc;
+    font-weight: 200;
+    font-size: 12pt;
+    display: inline-block;
+    margin-right: 10px; }
+
+/*# sourceMappingURL=recept.css.map */
